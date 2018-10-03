@@ -15,6 +15,7 @@ export class MyAppComponent implements OnInit, OnChanges, DoCheck, AfterContentI
     console.log('MyAppComponent: ngOnInit');
     Observable.interval(1000).take(2).map(n => ['Angular', 'Angular is Good'][n]).subscribe(str => this.message = str);
     Observable.of(false).delay(3000).subscribe(n => this.on = n);
+    Observable.of(true).delay(5000).subscribe(n => this.on = n);
   }
 
   ngOnChanges() {
