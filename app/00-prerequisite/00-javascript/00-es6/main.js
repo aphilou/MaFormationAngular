@@ -71,7 +71,7 @@ class Vehicle {
 
 class Car extends Vehicle {
     constructor(price, color) {
-        super();
+        super(price);
         this.color = color;
     }
     turn(direction) {
