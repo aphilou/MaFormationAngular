@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `<header>Hello {{name}}</header>`,
+  template: `<header class="toto">Hello {{name}}</header>`,
+  styles: [ `.toto { color: red; }`]
 })
 export class AppComponent  { 
   name = 'Angular !!!'; 
