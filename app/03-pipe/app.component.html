@@ -1,6 +1,7 @@
 <header>Pipe</header>
 <ul>
-    <li>List: {{myArray | join: ';'}}</li>
+    <li>List: {{myArray | join: ';' | duplicate: 4 }}</li>
     <li>Time: {{now | date}}</li>
+    <!-- async pipe pour voir l'observable -->
     <li>{{angularObservable | async}}</li>
 </ul>
