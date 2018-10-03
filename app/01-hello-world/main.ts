@@ -7,5 +7,6 @@ import { AppModule } from './app.module';
 // import { enableProdMode } from '@angular/core';
 // enableProdMode();
 
+// point d'entrée prévu pour pouvoir ajouter d'autre plateforme que les navigateurs Web
 platformBrowserDynamic().bootstrapModule(AppModule);
 console.log('Hello world!');

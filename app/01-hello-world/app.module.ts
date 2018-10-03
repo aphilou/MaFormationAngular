@@ -6,6 +6,6 @@ import { AppComponent } from './app.component';
 @NgModule({
   imports: [BrowserModule],
   declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent]   // Root Component doit être unique
 })
 export class AppModule { }
