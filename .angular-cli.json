@@ -1,0 +1,15 @@
+{
+    "apps": [{
+        "appRoot": ".",
+        "root": "app/18-top-bottom",
+        "prefix": "jlg"
+    }],
+    "defaults": {
+        "styleExt": "scss",
+        "component": {
+        },
+        "service": {
+            "spec": false
+        }
+    }
+}

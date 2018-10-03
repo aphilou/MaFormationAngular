@@ -1,0 +1,45 @@
+<header>Reactive Form</header>
+<section *ngIf="beforeSubmit">
+    <form [formGroup]="f" (ngSubmit)="onSubmit()">
+        <label>
+            <div>Firstname</div>
+            <div>
+                <input formControlName="firstname">
+            </div>
+            <ul *ngIf="f.controls.firstname && f.controls.firstname.touched && f.controls.firstname.invalid">
+                <li class="error" *ngIf="f.controls.firstname.errors.required">Firstname is required.</li>
+            </ul>
+        </label>
+        <label>
+            <div>Age</div>
+            <div>
+                <input formControlName="age">
+            </div>
+            <ul *ngIf="f.controls.age && f.controls.age.touched && f.controls.age.invalid">
+                <li class="error" *ngIf="f.controls.age.errors.forbiddenAge">Hey, you cannot be that old!</li>
+                <li class="error" *ngIf="f.controls.age.errors.number">Age must be a valid number.</li>
+                <li class="error" *ngIf="f.controls.age.errors.required">Age is required.</li>
+            </ul>
+        </label>
+        <label>
+            <div>Region</div>
+            <div>
+                <select formControlName="region">
+                    <option *ngFor="let r of regionService.regions" [value]="r">{{r}}</option>
+                </select>
+            </div>
+            <ul *ngIf="f.controls.region && f.controls.region.touched && f.controls.region.invalid">
+                <li class="error" *ngIf="f.controls.region.errors.required">Choose a region.</li>
+            </ul>
+        </label>
+        <button (click)="reset()">Reset</button>
+        <button type="submit" [disabled]="f.invalid">Submit</button>
+    </form>
+    
+    <p>Form value: {{ f.value | json }}</p>
+    <p>Form status: {{ f.status | json }}</p>
+</section>
+<section *ngIf="!beforeSubmit">
+    Form sucessfully submitted.
+    <button (click)="goBack()">Back</button>
+</section>

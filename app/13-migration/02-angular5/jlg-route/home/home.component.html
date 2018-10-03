@@ -1,0 +1,47 @@
+<h1>Rest Example</h1>
+<section>
+  <label>New Ticket name:
+    <input type="text" placeholeder="Ex: John" [(ngModel)]="newTicket.name">
+  </label>
+  <button [jlg-click-and-disable]="create.bind(this)">Create</button>
+  <br/>
+  <br/>
+  <fieldset>
+
+    <button [jlg-click-and-disable]="query.bind(this)">Rafraichir la liste des tickets</button>&nbsp;
+    <button [jlg-click-and-disable]="empty.bind(this)">Delete All</button>
+    <br/>
+
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>New name</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+      <tr *ngFor="let ticket of tickets">
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.name}}</td>
+        <td>
+          <input type="text" [(ngModel)]="ticket.newName" />
+        </td>
+        <td>
+          <button [jlg-click-and-disable]="update.bind(this, ticket)">Update</button>
+        </td>
+        <td>
+          <button [jlg-click-and-disable]="delete.bind(this, ticket.id)">Delete</button>
+        </td>
+      </tr>
+    </table>
+  </fieldset>
+
+  <fieldset>
+    <input type="number" [(ngModel)]="id" />
+    <br/>
+    <button [jlg-click-and-disable]="retrieve.bind(this)">Retrieve the ticket</button>
+    <br/>
+    <br/>
+    <div ng-cloak>Retrieve Ticket: {{ticket|json}}</div>
+  </fieldset>
+</section>
