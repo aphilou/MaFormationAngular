@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -9,4 +9,11 @@ import { Component } from '@angular/core';
 {{myName}}
 `,
 })
-export class AppComponent { myName = 'Angular'; }
+export class AppComponent implements DoCheck {
+  
+  myName = 'Angular'; 
+
+  ngDoCheck(): void {
+    console.log(`MyName changed: ${this.myName}`);
+  } 
+}
