@@ -8,6 +8,7 @@ import './app.component.scss';
     <nav>
     <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
     <a routerLink="/product/5" routerLinkActive="active">Product#5</a>
+    <a routerLink="/product/3" routerLinkActive="active">Product#trois</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
     </nav>
   </header>
