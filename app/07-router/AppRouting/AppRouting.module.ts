@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductComponent },
   {
     path: 'about', component: AboutComponent, data: {
-      title: 'JLG Consulting',
+      appName: 'JLG Consulting',
     }
   },
   { path: '**', redirectTo: '/' }

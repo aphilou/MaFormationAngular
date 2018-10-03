@@ -14,8 +14,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class ProductComponent {
   constructor(private route: ActivatedRoute, private titleService: Title) {
-    const id: Observable<string> = route.params.map(p => p.id);
-    id.subscribe(s => {
+    // id est défini dans AppRouting.module.ts
+    const myParam: Observable<string> = route.params.map(p => p.id);
+    myParam.subscribe(s => {
       this.id = +s;
       this.titleService.setTitle('Product ' + this.id);
     });

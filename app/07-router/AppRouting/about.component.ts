@@ -21,8 +21,9 @@ import { Title } from '@angular/platform-browser';
 })
 export class AboutComponent {
   title: string;
+  // appName référencé dans AppRouting.module.ts
   constructor(private route: ActivatedRoute, private titleService: Title) {
-    route.data.map(p => p.title).subscribe(title => this.title = title);
+    route.data.map(p => p.appName).subscribe(t => this.title = t);
     this.titleService.setTitle('About');
   }
 }
