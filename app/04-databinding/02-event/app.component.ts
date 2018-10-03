@@ -8,12 +8,7 @@ import { Component } from '@angular/core';
   <button (click)="myAlert()">Click me!</button>
   <button on-click="myAlert()">Click me with canonical form!</button>
 </div>
-`, styles: [`
-div {
-  text-align: center;
-  font-size: 2em;
-}
-`],
+`, styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   myAlert() {
