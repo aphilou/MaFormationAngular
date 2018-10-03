@@ -43,6 +43,7 @@ export class JLGDraggableDirective {
       this.element.nativeElement.style.left = this.x + 'px';
     }
 
+    // sorte de garbage collector
     const mouseup = () => {
       document.removeEventListener('mousemove', mousemove);
       document.removeEventListener('mouseup', mouseup);
