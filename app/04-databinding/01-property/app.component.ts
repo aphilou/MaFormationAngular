@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'my-app',
@@ -11,6 +12,10 @@ import { Component } from '@angular/core';
 `,
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   niceImageUrl = '../../assets/chateau.jpg';
+  
+  ngOnInit() {
+    Observable.of('../../assets/beach.jpg').delay(4000).subscribe(n => this.niceImageUrl = n);
+  }
 }
