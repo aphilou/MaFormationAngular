@@ -3,18 +3,11 @@ import { Observable } from 'rxjs';
 
 @Component({
   selector: 'my-app',
-  template: `
-<span>
-<header>Interpolation binding</header>
-<p style="font-size: 4em;">
-{{myName}}
-</p>
-</span>
-`,
+  templateUrl: './app.component.html',
 })
 export class AppComponent { 
   myName = 'Angular 0'; 
-  i = 0;
+  //i = 0;
 
   ngOnInit() {
     console.log('init the component');
