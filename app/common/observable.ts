@@ -50,6 +50,6 @@ export const exponentialBackoffObservable = function <T>(observable: Observable<
 }
 
 export const angularObservable = Observable.interval(1000).scan(n => ({
-    string: n.string,
-    cutIndex: (n.cutIndex >= n.string.length) ? 0 : n.cutIndex + 1
-}), { string: 'Angular', cutIndex: 0 }).map(n => n.string.substring(0, n.cutIndex));
+    item: n.item,
+    cutIndex: (n.cutIndex >= n.item.length) ? 0 : n.cutIndex + 1
+}), { item: 'Angular', cutIndex: 0 }).map(n => n.item.substring(0, n.cutIndex));
