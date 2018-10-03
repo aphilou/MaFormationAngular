@@ -14,6 +14,7 @@ import { JLGPasswordCheckerService, PasswordRule } from './JLGPasswordChecker.se
 })
 
 export class JLGPasswordToCheck {
+  // Doit être attribut privé du constructeur
   constructor(private myService: JLGPasswordCheckerService) { }
 
   myPassword: string = '';
