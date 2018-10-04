@@ -1,6 +1,6 @@
 <header>Forms</header>
 <section *ngIf="beforeSubmit">
-    <form #f="ngForm" (ngSubmit)="onSubmit(); f.reset();">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f);  ">
         <label>
             <div>Firstname</div>
             <div>

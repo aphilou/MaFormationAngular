@@ -25,12 +25,13 @@ export class AppComponent {
     });
   }
 
-  onSubmit() {
+  onSubmit(f: NgForm) {
     console.log('submiting the form');
     this.firstname = '';
     this.region = '';
     this.age = undefined;
     this.beforeSubmit = false;
+    f.reset();
   }
 
   checkValidity(f) {
