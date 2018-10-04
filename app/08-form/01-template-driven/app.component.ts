@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 const url = 'https://gist.githubusercontent.com/SiamKreative/f1074ed95507e69d08a0/raw/bbf2c9dbb156eef1cebf37c8846331f3f3493fa6/french-regions-departments.json';
 
@@ -37,7 +38,7 @@ export class AppComponent {
   }
 
   checkValidity(f) {
-    console.log('f', f);
+    console.log('checkValidity for f', f);
     return f.invalid;
   }
 

@@ -23,9 +23,15 @@
         <label>
             <div>Age</div>
             <div>
-                <input type="text" name="age" [(ngModel)]="age" required age="110">
+                <input type="text" name="age" [(ngModel)]="age" required age age-max="110" age-min="18"/>
             </div>
+            <!--
+                f.controls.age.errors.forbiddenAge
+                f.controls.age.errors.number
+                sont des controls custom définis dans le module JLG.module
+            -->
             <ul *ngIf="f.controls.age && f.controls.age.touched && f.controls.age.invalid">
+                <li class="error" *ngIf="f.controls.age.errors.ageTooYoung">Hey, you cannot be that young!</li>
                 <li class="error" *ngIf="f.controls.age.errors.forbiddenAge">Hey, you cannot be that old!</li>
                 <li class="error" *ngIf="f.controls.age.errors.number">Age must be a valid number.</li>
                 <li class="error" *ngIf="f.controls.age.errors.required">Age is required.</li>
