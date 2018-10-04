@@ -1,10 +1,5 @@
-import { Component, EventEmitter, HostListener, ElementRef, HostBinding } from '@angular/core';
-import { of } from 'rxjs/observable/of';
+import { Component, ElementRef, HostBinding } from '@angular/core';
 import { interval } from 'rxjs/observable/interval';
-
-interface HelloEvent {
-  message: string;
-}
 
 @Component({
   selector: 'my-app',
