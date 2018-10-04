@@ -18,5 +18,7 @@
 - REST vs GraphQL (Facebook), successeur de REST ?
 - GO : réécrire du C avec la facilité de Java
 - JAVASCRIPT: variable privée est souvent écrite avec '_' en préfix (ex: _city)
+- Concept ou design pattern Flow pour bien gérer l'IHM -> Redux
 - _Décorateurs_
     - @Input, faire ruisseler les données à transmettre du routeur d'état vers les différentes branches des composants 
+    - @Output, remonter un événement
