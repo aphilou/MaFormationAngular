@@ -10,6 +10,7 @@ const url = 'https://gist.githubusercontent.com/SiamKreative/f1074ed95507e69d08a
 export class AppComponent {
   beforeSubmit: boolean = true;
   firstname: string = '';
+  email = '';
   region: string = undefined;
   age: number;
   regions: string[];
@@ -28,6 +29,7 @@ export class AppComponent {
   onSubmit(f: NgForm) {
     console.log('submiting the form');
     this.firstname = '';
+    this.email;
     this.region = '';
     this.age = undefined;
     this.beforeSubmit = false;

@@ -11,6 +11,16 @@
             </ul>
         </label>
         <label>
+            <div>Email</div>
+            <div>
+                <input type="email" name="email" [(ngModel)]="email" required email>
+            </div>
+            <ul *ngIf="f.controls.email && f.controls.email.touched && f.controls.email.invalid">
+                <li class="error" *ngIf="f.controls.email.errors.email">Enter a valid email.</li>
+                <li class="error" *ngIf="f.controls.email.errors.required">Email is required.</li>
+            </ul>
+        </label>
+        <label>
             <div>Age</div>
             <div>
                 <input type="text" name="age" [(ngModel)]="age" required age="110">
