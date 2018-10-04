@@ -23,19 +23,18 @@ export class AppComponent {
     this.http.get(url).delay(2000).subscribe({
       next: data => {
         this.regions = Object.keys(data['regions']);
-        const depts = Object.keys(data['departments'])
+        const depts = Object.keys(data['departments']);
+        const tr = n => n === '2a' ? 20.5 : n === '2b' ? 20.6 : +n;
         this.departments = depts.map(n => ({
           name: data['departments'][n].name,
           id: n
-        })).sort((a, b) => {
-          const tr = n => n === '2a' ? 20.5 : n === '2b' ? 20.6 : +n;
-          return Math.sign(tr(a.id) - tr(b.id));
-        });
+        })).sort((a, b) => Math.sign(tr(a.id) - tr(b.id)));
         console.log('this.departments', this.departments);
       },
       error: err => console.log('error', err),
     });
   }
+
 
   onSubmit(f: NgForm) {
     console.log('submiting the form');
