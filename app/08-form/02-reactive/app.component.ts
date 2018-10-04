@@ -16,6 +16,7 @@ export class AppComponent {
 
   f: FormGroup;
 
+  // Injection du service pour son utilisation dans le template
   constructor(private fb: FormBuilder, private regionService: RegionService) {
     this.createForm();
     this.reset();
