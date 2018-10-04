@@ -18,6 +18,7 @@ import { interval } from 'rxjs/observable/interval';
 }
 `]
 })
+// host mot Angular pour identifier le composant 'my-app'
 export class AppComponent {
   constructor(private element: ElementRef) { }
   @HostBinding('class') myClass: string;
