@@ -12,4 +12,5 @@ import { HostComponent } from './host.component';
   providers: [{ provide: JLGService, useClass: JLGModuleService }],
   bootstrap:    [ AppComponent ]
 })
+// l'alias du service JLGModuleService sera JLGService
 export class AppModule { }
