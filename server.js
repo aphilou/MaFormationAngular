@@ -14,6 +14,13 @@ app.use(function (req, res, next) {
 app.use('/app/wpk/', webpackRouter);
 app.use('/ws', wsRouter);
 
+// Ajouter un middleware pour répondre 203 au GET data.json
+app.use('/app/09-http/data.json', (req, res, next) => {
+    res.status(203).sendFile('./app/09-http/data.json', {
+        root: __dirname,
+    });
+});
+
 const htdocs = '.';
 app.use(express.static(htdocs));
 app.use(serveIndex(htdocs, {
