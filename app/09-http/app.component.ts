@@ -114,7 +114,7 @@ export class AppComponent {
         const reader = new FileReader();
         reader.readAsDataURL(blob);
         reader.onloadend = () => {
-          this.imageURI = this.sanitizer.bypassSecurityTrustUrl(reader.result);
+          this.imageURI = this.sanitizer.bypassSecurityTrustUrl(reader.result as string);
         }
       },
       error: e => {
