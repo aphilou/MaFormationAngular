@@ -24,6 +24,7 @@ export class AppComponent {
 
   }
 
+  // Ecouter au niveau global au DOM
   @HostListener('hello', ['$event']) onHello(obj: CustomEvent<HelloEvent>) {
     console.log('obj', obj);
     this.message = obj.detail.message;
