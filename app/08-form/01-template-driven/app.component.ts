@@ -15,6 +15,7 @@ export class AppComponent {
   region: string = undefined;
   age: number;
   regions: string[];
+  departments: any[];
 
   constructor(private http: HttpClient) { }
 
@@ -22,6 +23,15 @@ export class AppComponent {
     this.http.get(url).delay(2000).subscribe({
       next: data => {
         this.regions = Object.keys(data['regions']);
+        const depts = Object.keys(data['departments'])
+        this.departments = depts.map(n => ({
+          name: data['departments'][n].name,
+          id: n
+        })).sort((a, b) => {
+          const tr = n => n === '2a' ? 20.5 : n === '2b' ? 20.6 : +n;
+          return Math.sign(tr(a.id) - tr(b.id));
+        });
+        console.log('this.departments', this.departments);
       },
       error: err => console.log('error', err),
     });
@@ -30,8 +40,9 @@ export class AppComponent {
   onSubmit(f: NgForm) {
     console.log('submiting the form');
     this.firstname = '';
-    this.email;
+    this.email = '';
     this.region = '';
+    this.departments = null;
     this.age = undefined;
     this.beforeSubmit = false;
     f.reset();

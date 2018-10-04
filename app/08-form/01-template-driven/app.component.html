@@ -48,6 +48,17 @@
                 <li class="error" *ngIf="f.controls.region.errors.required">Choose a region.</li>
             </ul>
         </label>
+        <label>
+            <div>Département</div>
+            <div>
+                <select name="departments" [(ngModel)]="departments" required>
+                    <option *ngFor="let d of departments" [value]="d.id">{{d.name}}</option>
+                </select>
+            </div>
+            <ul *ngIf="f.controls.departments && f.controls.departments.touched && f.controls.departments.invalid">
+                <li class="error" *ngIf="f.controls.departments.errors.required">Choose a department.</li>
+            </ul>
+        </label>
         <button [disabled]="checkValidity(f)">Submit</button>
     </form>
 </section>
