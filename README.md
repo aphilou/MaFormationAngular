@@ -36,5 +36,11 @@
     - [Karma](http://karma-runner.github.io/2.0/index.html)
         - Les test se lancent par
         ```bash
-        npm test
+        npm test        
+        ```
+- Tests d'Intégration
+    - [Protactor](https://www.protractortest.org/#/)
+        - Les test se lancent par
+        ```bash
+        npm e2e        
         ```
