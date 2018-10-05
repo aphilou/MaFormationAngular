@@ -25,3 +25,16 @@
     - @Input, faire ruisseler les données à transmettre du routeur d'état vers les différentes branches des composants 
     - @Output, remonter un événement
 - Librairie des icons [Font awesone](https://fontawesome.com/)
+    ```bash
+    npm install @fortawesome/fontawesome-free
+
+    npm install @fortawesome/fontawesome-svg-core
+    npm install @fortawesome/free-solid-svg-icons
+    npm install @fortawesome/angular-fontawesome
+    ```
+- Tests Unitaires
+    - [Karma](http://karma-runner.github.io/2.0/index.html)
+        - Les test se lancent par
+        ```bash
+        npm test
+        ```
